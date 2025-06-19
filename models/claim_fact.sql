@@ -9,7 +9,7 @@ SELECT
     cl.claim_date,
     cl.claim_amount
 FROM {{ ref('claims') }} cl
-JOIN {{ ref('policy') }} p
+JOIN {{ ref('policies') }} p
   ON cl.policy_id = p.policy_id
-JOIN {{ ref('customer') }} c
+JOIN {{ ref('customers') }} c
   ON p.customer_id = c.customer_id

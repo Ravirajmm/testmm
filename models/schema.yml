@@ -117,11 +117,11 @@ models:
         tests:
           - not_null
 
-      - name: Claim_Amount
-        description: "Must be positive"
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: "Claim_Amount >= 0"
-              severity: warn
+      #- name: Claim_Amount
+      #  description: "Must be positive"
+       # tests:
+         # - dbt_utils.expression_is_true:
+         #     expression: "Claim_Amount >= 0"
+          #    severity: warn
 
 

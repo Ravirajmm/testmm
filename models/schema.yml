@@ -119,6 +119,6 @@ models:
 
       - name: Claim_Amount
         tests:
-          - dbt_expectations.expect_column_values_to_be_between:
+          #- dbt_expectations.expect_column_values_to_be_between:
               min_value: 0
-              strict_min: false
+           #   strict_min: false

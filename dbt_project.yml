@@ -55,6 +55,7 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
 
 target-path: "target"
 clean-targets:
@@ -63,9 +64,9 @@ clean-targets:
 
 models:
   my_new_project:
-    +materialized: table  # Apply materialization to all models
+    +materialized: table  
 
 seeds:
   my_new_project:
-    +schema: mm_test_sf   # Replace with your Snowflake schema
-    +database: mm_db_test # Replace with your Snowflake database
+    +schema: mm_test_sf   
+    +database: mm_db_test 

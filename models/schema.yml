@@ -118,9 +118,15 @@ models:
           - not_null
 
       - name: Claim_Amount
+        description: "Claim amount must be >= 0"
         tests:
-          - dbt_utils.expression_is_true:
-              expression: "Claim_Amount >= 0"
+        - dbt_utils.expression_is_true:
+            expression: "Claim_Amount >= 0"
+
+      #- name: Claim_Amount
+       # tests:
+       #   - dbt_utils.expression_is_true:
+              #expression: "Claim_Amount >= 0"
           #- dbt_expectations.expect_column_values_to_be_between:
            #   min_value: 0
            #   strict_min: false

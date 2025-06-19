@@ -119,6 +119,8 @@ models:
 
       - name: Claim_Amount
         tests:
+          - dbt_utils.expression_is_true:
+              expression: "Claim_Amount >= 0"
           #- dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
+           #   min_value: 0
            #   strict_min: false

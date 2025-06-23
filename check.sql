@@ -1,0 +1,1 @@
+select current_databse(), current_schema();

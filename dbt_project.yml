@@ -68,10 +68,6 @@ models:
     +schema: "{{ target.schema }}"
     +database: "{{ target.database }}"
 
-#seeds:
-  #my_new_project:
-   # +schema: mm_test_sf   
-    #+database: mm_db_test 
 seeds:
   my_new_project:
     +schema: "{{ target.schema }}"   

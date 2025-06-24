@@ -1,1 +1,0 @@
-select 1 ID, 'PRASHANTHI' NAME, 'HYD' CITY

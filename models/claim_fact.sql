@@ -1,4 +1,10 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    post_hook="{{ log_model_execution(this.name, 'success') }}"
+) }}
+
+
+
 
 WITH customers AS (
     SELECT 

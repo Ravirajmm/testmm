@@ -76,4 +76,9 @@ seeds:
     +database: "{{ target.database }}"
 
 
+on-run-start:
+  - "{{ log_model_event('run_start') }}"
+
+on-run-end:
+  - "{{ log_model_event('run_end') }}"
 

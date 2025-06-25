@@ -68,7 +68,12 @@ models:
     +schema: "{{ target.schema }}"
     +database: "{{ target.database }}"
 
+
+
 seeds:
   my_new_project:
     +schema: "{{ target.schema }}"   
     +database: "{{ target.database }}"
+
+
+

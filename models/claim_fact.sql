@@ -1,11 +1,9 @@
 {{ log("DB: " ~ target.database ~ " | Schema: " ~ target.schema, info=True) }}
 
 {{ config(
-    materialized='table',
-    post_hook=[
-        "{{ log_model_execution(this.name, 'success') }}"
-    ]
+    materialized='table'
 ) }}
+
 
 WITH customers AS (
     SELECT 

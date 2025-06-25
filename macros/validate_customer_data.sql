@@ -6,15 +6,15 @@
     ),
 
     null_checks as (
-        select id as record_id, 'customer_name' as column_name, 'null_check' as issue_type, 'Name is null' as issue_description
+        select CUSTOMER_ID as record_id, 'FIRST_NAME' as column_name, 'null_check' as issue_type, 'Name is null' as issue_description, null as phone_value
         from source_data
-        where customer_name is null
+        where FIRST_NAME is null
 
         union all
 
-        select id, 'phone_number', 'format_check', 'Phone number is invalid'
+        select CUSTOMER_ID, 'PHONE_1', 'format_check', 'Phone number is invalid',PHONE_1 as phone_value
         from source_data
-        where not regexp_like(phone_number, '^[0-9]{10}$')
+        where not regexp_like(PHONE_1, '^[0-9()\\s-]{10,}$')
     )
 
     select * from null_checks

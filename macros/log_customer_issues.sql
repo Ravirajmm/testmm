@@ -15,10 +15,11 @@
 
 
 
--- macros/log_customer_issues.sql
+
 
 {% macro log_customer_issues() %}
-    {% set results = dbt_utils.get_query_results_as_dict("{{ validate_customer_data('customers') }}") %}
+    {% set sql = validate_customer_data('customers') %}
+    {% set results = dbt_utils.get_query_results_as_dict(sql) %}
 
     {% for row in results %}
         {{ log_validation_issues(
@@ -30,5 +31,6 @@
         ) }}
     {% endfor %}
 {% endmacro %}
+
 
 

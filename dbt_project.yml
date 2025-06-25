@@ -48,7 +48,7 @@ version: '1.0.0'
 config-version: 2
 
 profile: 'default'
-
+log-path: logs
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -65,8 +65,15 @@ clean-targets:
 models:
   my_new_project:
     +materialized: table  
+    +schema: "{{ target.schema }}"
+    +database: "{{ target.database }}"
+
+
 
 seeds:
   my_new_project:
-    +schema: mm_test_sf   
-    +database: mm_db_test 
+    +schema: "{{ target.schema }}"   
+    +database: "{{ target.database }}"
+
+
+

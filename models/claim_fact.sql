@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ log("DB: " ~ target.database ~ " | Schema: " ~ target.schema, info=True) }}
+
+{{ config(
+    materialized='table'
+) }}
+
 
 WITH customers AS (
     SELECT 

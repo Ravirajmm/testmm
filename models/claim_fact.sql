@@ -1,7 +1,8 @@
 {{ log("DB: " ~ target.database ~ " | Schema: " ~ target.schema, info=True) }}
 
 {{ config(
-    materialized='table'
+    materialized='table',
+    post_hook="{{ log_model_event('success') }}"
 ) }}
 
 

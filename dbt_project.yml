@@ -78,7 +78,11 @@ seeds:
 
 on-run-start:
   - "{{ log_model_event('run_start') }}"
+  - "{{create_run_end_results_table()}}"
+ # - "{{ init_error_log() }}"#
 
 on-run-end:
   - "{{ log_model_event('run_end') }}"
+  - "{{log_run_end_results(results)}}"
+  #- "{{ log_error('job_run','success','') }}"#
 

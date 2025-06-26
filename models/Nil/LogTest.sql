@@ -1,6 +1,5 @@
 {{ config(
-    materialized='table',
-    post_hook="{{log_error(this.identifier,'success','')}}"
+    materialized='table'
 ) }}
 
 SELECT 'ABC' as NAME

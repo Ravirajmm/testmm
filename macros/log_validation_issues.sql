@@ -1,7 +1,4 @@
 {% macro log_validation_issues(model_name, issues_query) %}
-  {% set model_name = model_name | default('unknown_model') %}
-  {% set issues_query = issues_query | default('select null') %}
-
   {% set insert_sql %}
     insert into MM_DB_TEST.MM_TEST_SF.data_quality_logs (
         table_name,

@@ -1,7 +1,4 @@
 
-
-
-
 {% macro validate_customer_data(model_name) %}
     {% set validation_query %}
         with source_data as (
@@ -21,15 +18,5 @@
         select * from null_checks
     {% endset %}
 
-    {% set results = run_query(validation_query) %}
-    {% if execute %}
-        {% for row in results %}
-            {% set record_id = row['record_id'] %}
-            {% set column_name = row['COLUMN_NAME'] %}
-            {% set issue_type = row['ISSUE_TYPE'] %}
-            {% set issue_desc = row['ISSUE_DESCRIPTION'] %}
-            
-            {{ log_validation_issues(model_name, column_name, issue_type, issue_desc, record_id) }}
-        {% endfor %}
-    {% endif %}
+    {% do log_validation_issues(model_name, validation_query) %}
 {% endmacro %}

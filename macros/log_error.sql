@@ -11,7 +11,7 @@ invocation_id
 )
 values (
     current_timestamp,
-    '{{model_name}}',
+    '{{this.identifier}}',
     '{{status}}',
     '{{error_message | replace ("'","' '")}}',
     '{{run_started_at}}',
@@ -21,4 +21,4 @@ values (
 )
 {% endset%}
 {% do run_query(sql)%}
-{% end macro%}
+{% endmacro%}

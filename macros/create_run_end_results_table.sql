@@ -7,6 +7,5 @@ model text,
 Status text,
 message text,
 Updated timestamp
-
 )
 {% endmacro%}
